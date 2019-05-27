@@ -4,7 +4,8 @@
   "description": "The awesome game that's going to take over the world!",
   "main": "index.js",
   "scripts": {
-    "test": "test",
+    "test": "karma start config/karma.conf.js",
+    "test:prod": "karma start config/karma.conf.js --single-run",
     "build": "webpack --config config/webpack.production.js",
     "serve": "webpack-dev-server --config config/webpack.dev.js"
   },
@@ -25,6 +26,7 @@
     "url-loader": "^1.1.2",
     "webpack": "^4.32.2",
     "webpack-cli": "^3.3.2",
-    "webpack-dev-server": "^3.4.1"
+    "webpack-dev-server": "^3.4.1",
+    "webpack-karma-jasmine": "^3.0.6"
   }
 }
