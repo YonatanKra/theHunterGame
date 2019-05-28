@@ -1,3 +1,8 @@
+const webpackConfig = require('./webpack.common');
+Object.assign(webpackConfig, {
+    devtool: 'inline-source-map',
+    mode: 'production'
+});
 module.exports = function (config) {
     config.set({
 
@@ -65,9 +70,6 @@ module.exports = function (config) {
         // how many browser should be started simultaneous
         concurrency: Infinity,
 
-        webpack: {
-            devtool: 'inline-source-map',
-            mode: 'production'
-        }
+        webpack: webpackConfig
     })
 };
