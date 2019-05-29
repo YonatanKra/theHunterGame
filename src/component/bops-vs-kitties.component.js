@@ -18,11 +18,19 @@ export class BopsVsKitties extends HTMLElement {
         const canvas = this.root.querySelector('canvas');
 
         const ctx = canvas.getContext('2d');
+
+        // add a circle
         ctx.beginPath();
         ctx.arc(40, 60, 15, 0, Math.PI * 2); //x, y, radius, start angle, end angle
         ctx.fillStyle = '#0095DD'; // just fill it
         ctx.fill();
         ctx.closePath();
 
+        // add a rectangle
+        ctx.beginPath();
+        ctx.rect(140, 260, 50, 100);
+        ctx.fillStyle = 'red';
+        ctx.fill();
+        ctx.closePath();
     }
 }
