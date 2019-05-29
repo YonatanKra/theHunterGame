@@ -1,5 +1,6 @@
 // setup a template
 import * as templateString from './bops-vs-kitties.component.html';
+import * as BOP_IMAGE from '../assets/bop.png';
 
 // setup a template element with our template
 const template = document.createElement('template');
@@ -32,5 +33,7 @@ export class BopsVsKitties extends HTMLElement {
         ctx.fillStyle = 'red';
         ctx.fill();
         ctx.closePath();
+
+        
     }
 }
