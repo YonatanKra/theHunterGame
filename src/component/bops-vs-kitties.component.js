@@ -1,9 +1,13 @@
 // setup a template
 import * as templateString from './bops-vs-kitties.component.html';
+import * as BOP_IMAGE from '../assets/bop.png';
 
 // setup a template element with our template
 const template = document.createElement('template');
 template.innerHTML = templateString;
+
+const BOP_IMAGE_ELEMENT = new Image(50, 50);
+BOP_IMAGE_ELEMENT.src = BOP_IMAGE;
 
 export class BopsVsKitties extends HTMLElement {
     constructor() {
