@@ -6,6 +6,9 @@ import * as BOP_IMAGE from '../assets/bop.png';
 const template = document.createElement('template');
 template.innerHTML = templateString;
 
+const BOP_IMAGE_ELEMENT = new Image(50, 50);
+BOP_IMAGE_ELEMENT.src = BOP_IMAGE;
+
 export class BopsVsKitties extends HTMLElement {
     constructor() {
         super();
@@ -34,6 +37,7 @@ export class BopsVsKitties extends HTMLElement {
         ctx.fill();
         ctx.closePath();
 
-        
+        // add an image 
+        ctx.drawImage(BOP_IMAGE_ELEMENT, 60, 60, 50, 50);
     }
 }
