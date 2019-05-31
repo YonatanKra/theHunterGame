@@ -44,6 +44,8 @@ module.exports = {
                       }
                     }
                   },
+                ]
+            },
             // use the url loader for font files
             {
                 test: /\.(woff2?|ttf|eot|svg)$/,
