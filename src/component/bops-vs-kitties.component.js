@@ -38,6 +38,8 @@ export class BopsVsKitties extends HTMLElement {
         ctx.closePath();
 
         // add an image 
-        ctx.drawImage(BOP_IMAGE_ELEMENT, 60, 60, 50, 50);
+        BOP_IMAGE_ELEMENT.onload = () => {
+            ctx.drawImage(BOP_IMAGE_ELEMENT, 60, 60, 50, 50);
+        };
     }
 }
