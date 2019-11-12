@@ -1,8 +1,4 @@
-import { BopsVsKitties } from './component/bops-vs-kitties.component';
-
-// configure a custom element for our game
-window.customElements.define('bops-vs-kitties', BopsVsKitties);
-
+import './the-hunter-game';
 // add it to the DOM
-const bopsVsKitties = document.createElement('bops-vs-kitties');
-document.body.append(bopsVsKitties);
+const theHunterGame = document.createElement('hunter-game');
+document.body.append(theHunterGame);
