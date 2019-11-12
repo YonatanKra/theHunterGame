@@ -6,13 +6,18 @@ ORC_IMAGE_ELEMENT.src = ORC_IMAGE;
 
 export class StateManager {
     constructor() {
-        this.monsters = [];
-        this.heroes = [];
+        this.state = {
+            monsters: []
+        };
+    }
+
+    get monsters() {
+        return this.state.monsters;
     }
 
     spawn(xTilesMax, yTilesMax, multiplier) {
-        const x = StateManager.getRandomTileInRange(xTilesMax) * multiplier - 72;
-        const y = StateManager.getRandomTileInRange(yTilesMax) * multiplier - 72;
+        const x = StateManager.getRandomTileInRange(xTilesMax) * multiplier + 8;
+        const y = StateManager.getRandomTileInRange(yTilesMax) * multiplier + 8;
 
         return this.monsters[this.monsters.push(new Monster(x, y, ORC_IMAGE_ELEMENT))-1];
     }

@@ -1,10 +1,15 @@
-import { BopsVsKitties } from './bops-vs-kitties/bops-vs-kitties.component';
+import {HunterGame} from './the-hunter-game/the-hunter-game.component';
 import './app';
 
 // Integration level tests
 describe('App', () => {
-    it('should define bps-vs-kitties custom element', () => {
-        const bopsVsKittiesFromDOM = window.customElements.get('bops-vs-kitties');
-        expect(bopsVsKittiesFromDOM).toEqual(BopsVsKitties);
+    it('should define hunter-game custom element', () => {
+        const HunterGameFromDOM = window.customElements.get('hunter-game');
+        expect(HunterGameFromDOM).toEqual(HunterGame);
+    });
+
+    afterAll(() => {
+        const component = document.querySelector('hunter-game');
+        document.body.removeChild(component);
     });
 });

@@ -1,27 +1,8 @@
+import {HunterGame} from "../the-hunter-game.component";
+
 const SIZE = 64;
 
-const MOTION = {
-    "UP": {
-        sign: -1,
-        limit: 0,
-        property: 'y'
-    },
-    "LEFT": {
-        sign: -1,
-        limit: 0,
-        property: 'x'
-    },
-    "RIGHT": {
-        sign: 1,
-        limit: 'width',
-        property: 'x'
-    },
-    "DOWN": {
-        sign: 1,
-        limit: 'height',
-        property: 'y'
-    }
-};
+const MOTION = ["Up", "Down", "Left", "Right"];
 
 export class Entity {
     constructor(x, y, image) {
@@ -90,15 +71,9 @@ export class Monster extends Entity {
 
     draw(canvas) {
         super.draw(canvas);
-        if (this.canMove) {
-            const directions = Object.keys(MOTION);
-            const directionString = directions[Math.round(Math.random() * (directions.length - 1))];
-            const direction = MOTION[directionString];
-            const currentPos = this[direction.property];
-            if (currentPos - 80 < 0 || (currentPos + 80) > canvas[direction.limit] - 80) {
-                return;
-            }
-            this[direction.property] += 80 * direction.sign;
+        if (this.canMove && Math.random() > .95) {
+            return MOTION[Math.round(Math.random() * (MOTION.length - 1))];
         }
+        return false;
     }
 }
