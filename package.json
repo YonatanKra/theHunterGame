@@ -7,7 +7,8 @@
     "test": "karma start config/karma.conf.js",
     "test:prod": "karma start config/karma.conf.js --single-run",
     "build": "webpack --config config/webpack.production.js",
-    "serve": "webpack-dev-server --config config/webpack.dev.js"
+    "serve": "webpack-dev-server --config config/webpack.dev.js",
+    "ghPagesDeploy": "gh-pages -d dist"
   },
   "keywords": [
     "html5",
